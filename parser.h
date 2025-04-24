@@ -1,6 +1,10 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-void parse_program(const char* src);
+// Forward declaration of ASTNode
+typedef struct ASTNode ASTNode;
 
-#endif
+// Declare the parser function
+void parse_program(void);
+
+#endif // PARSER_H
