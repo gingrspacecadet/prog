@@ -6,3 +6,4 @@ echo "Push completed successfully!"
 echo "Press any key to exit..."
 pause > nul
 exit
+cls
