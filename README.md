@@ -143,7 +143,7 @@ expression  -> identifier | number | expression operator expression | ( expressi
 type        -> int | float | void
 operator    -> + | - | * | /
 identifier  -> [a-zA-Z_][a-zA-Z0-9_]*```
-
+```
 
 ---
 
