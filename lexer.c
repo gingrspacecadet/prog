@@ -9,6 +9,17 @@ const char* KEYWORDS[] = {"Const", "Var", "if", "else", "for", "while", "return"
 const char* TYPES[] = {"Float", "Bool"};
 const char* OPERATORS[] = {"==", "!=", "<=", ">=", "&&", "||", "+", "-", "*", "/", "=", "<", ">", "!"};
 const char* SYMBOLS = "(){},;";
+const char* token_type_names[] = {
+    "TOKEN_IDENTIFIER",
+    "TOKEN_NUMBER",
+    "TOKEN_OPERATOR",
+    "TOKEN_SYMBOL",
+    "TOKEN_KEYWORD",
+    "TOKEN_TYPE",
+    "TOKEN_STRING",
+    "TOKEN_EOF",
+    "TOKEN_INVALID"
+};
 
 // Helper function to check if a string is a keyword
 int is_keyword(const char* str) {
@@ -155,10 +166,4 @@ void tokenize(const char* src) {
 
         free(tok.value);
     }
-}
-
-int main() {
-    const char* code = "Const Int4 x = 42;\nvoid main() { print(\"Hi\"); }";
-    tokenize(code);
-    return 0;
 }

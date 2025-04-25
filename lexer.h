@@ -1,4 +1,3 @@
-// lexer.h
 #ifndef LEXER_H
 #define LEXER_H
 
@@ -21,8 +20,11 @@ typedef struct {
     int       col;
 } Token;
 
-// The lexer functions:
+// Export the lexer functions
 Token next_token(const char* src, int* idx, int* line, int* col);
 void  tokenize(const char* src);
+
+// For debug printing in lexer.c
+extern const char* token_type_names[];
 
 #endif // LEXER_H
