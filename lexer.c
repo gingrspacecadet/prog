@@ -4,11 +4,34 @@
 #include <string.h>
 #include <ctype.h>
 
-// Keywords and types
-const char* KEYWORDS[] = {"Const", "Var", "if", "else", "for", "while", "return", "void", "true", "false"};
-const char* TYPES[] = {"Float", "Bool"};
-const char* OPERATORS[] = {"==", "!=", "<=", ">=", "&&", "||", "+", "-", "*", "/", "=", "<", ">", "!"};
+// Keywords (non-types):
+const char* KEYWORDS[] = {
+    "Const", "Var",
+    "if", "else", "for", "while", "return",
+    "true", "false"
+};
+
+// Types (including void, Float, Bool, Int1…Int32, Vec2…Vec5):
+const char* TYPES[] = {
+    "void", "Float", "Bool",
+    "Int1","Int2","Int3","Int4","Int5","Int6","Int7","Int8",
+    "Int9","Int10","Int11","Int12","Int13","Int14","Int15","Int16",
+    "Int17","Int18","Int19","Int20","Int21","Int22","Int23","Int24",
+    "Int25","Int26","Int27","Int28","Int29","Int30","Int31","Int32",
+    "Vec2","Vec3","Vec4","Vec5"
+};
+
+// Operators (longest-first):
+const char* OPERATORS[] = {
+    "==", "!=", "<=", ">=",
+    "&&", "||",
+    "+", "-", "*", "/", "=", "<", ">", "!"
+};
+
+// Single-char symbols:
 const char* SYMBOLS = "(){},;";
+
+// For printing token types:
 const char* token_type_names[] = {
     "TOKEN_IDENTIFIER",
     "TOKEN_NUMBER",
@@ -31,10 +54,9 @@ int is_keyword(const char* str) {
 
 // Helper function to check if a string is a type
 int is_type(const char* str) {
-    for (int i = 0; i < sizeof(TYPES) / sizeof(TYPES[0]); i++) {
+    for (int i = 0; i < sizeof(TYPES)/sizeof(*TYPES); i++) {
         if (strcmp(str, TYPES[i]) == 0) return 1;
     }
-    if (strncmp(str, "Int", 3) == 0 || strncmp(str, "Vec", 3) == 0) return 1;
     return 0;
 }
 

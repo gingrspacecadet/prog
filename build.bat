@@ -1,3 +1,3 @@
 cls
-gcc -o mycompiler main.c lexer.c parser.c
-.\main.exe
+gcc -o prog main.c lexer.c parser.c
+.\prog.exe
